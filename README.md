@@ -29,7 +29,7 @@ python ./MMFF_optimize_raw_xyz.py
 Code that automates the process of calculating the quantum chemical properties of an OPC from the .xyz files and saving them to csv file.
 ### 2-1. Calculation Description
 The following properties are calculated and saved in the descriptors.csv file generated through this calculation:
-1. r_PC: Molecular radius of OPC molecule. Optained from vdW surface area of molecule. ($r\sim \sqrt{\frac{area}{4\pi }}$)
+1. r_PC: Molecular radius of OPC molecule. Optained from vdW surface area of molecule. $(r\sim \sqrt{\frac{area}{4\pi }})$
 2. Mw: Molecular weight of OPC molecule. in g/mol.
 3. E_red: 
 4. T1: T1 state energy of neutral OPC molecule. in eV

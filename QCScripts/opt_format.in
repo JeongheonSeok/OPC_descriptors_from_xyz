@@ -1,0 +1,30 @@
+$molecule
+0 1
+xyzloc
+$end
+
+$rem
+    JOBTYPE         Optimization
+    METHOD          B3LYP
+    BASIS           6-31G
+    MEM_TOTAL       192000
+    MEM_STATIC      500
+    GEOM_OPT_MAX_CYCLES  =  200
+$end
+
+
+@@@
+
+$molecule
+-1 2
+xyzloc
+$end
+
+$rem
+    JOBTYPE         Optimization
+    METHOD          B3LYP
+    BASIS           6-31G
+    MEM_TOTAL       192000
+    MEM_STATIC      500
+    GEOM_OPT_MAX_CYCLES  =  200
+$end

@@ -49,26 +49,36 @@ The above results are obtained by properly processing Q-Chem out files. If you w
 #### 2-1-2. Q-Chem computation
 The Q-Chem calculation process to obtain these is as follows.
 1. Optimize neutral molecule structure and anion structure from MMFF optimized structure(input xyz file).
+
    B3LYP, 6-31G, vacuum
-2. Single point energy calculation
-   B3LYP, 6-31+G(d,p), PCM(acetonitrile)
-3. 
+2. Single point energy computation - for internal reorganization energy
+
+   B3LYP, 3-21G, PCM(acetonitrille). for four conditions: neutral in neutral coordinate, anion in neutral coordinate, neutral in anion coordinate, anion in anion coordinate.
+3. Single point energy computation - for reduction energy
+
+   B3LYP, 6-31+G(d,p), PCM(acetonitrile). for optimized structure of neutral molecule and anion.
+4. TDDFT - for excited state
+
+   B3LYP, 3-21G, PCM(acetonitrille). for optimized structure of neutral molecule.
+
+If you want to modify the computation conditions, you can modify opt_format.in and rst_format.in appropriately.
 ### 2-2. Usage
 First, you need to place the scripts and .xyz files for calculation in the appropriate location.
 Also before the usage, some of variables in the code must be appropriately modified to suit the user's environment.
 
-1. Place the QCScripts files in the appropriate directory. (This directory must be accessible for future calculations)
-2. Copy the file `mk_descriptors_from_xyz.sh` (or `mk_descriptors_from_xyz.pbs` if using the Portable Batch System) to the directory where you will perform the calculation.
-3. Create three folders in that directory. Name them `xyz`, `opt`, and `rst`.
-4. Put the xyz files to be calculated into the `xyz` folder. (These xyz files have to contain MMFF optimized structure)
-5. Modify `mk_descriptors_from_xyz.sh` (or .pbs) appropriately.
+1. Place the `QCScript`'s files in the appropriate directory. (This directory must be accessible for future calculations)
+2. Modify the MEM_TOTAL values ​​in the $rem section of `opt_format.in` and `rst_format.in` to suit your calculation environment. (The uploaded file is based on 192GB. Enter the values ​​in MB.)
+3. Copy the file `mk_descriptors_from_xyz.sh` (or `mk_descriptors_from_xyz.pbs` if using the Portable Batch System) to the directory where you will perform the calculation.
+4. Create three folders in that directory. Name them `xyz`, `opt`, and `rst`.
+5. Put the xyz files to be calculated into the `xyz` folder. (These xyz files have to contain MMFF optimized structure)
+6. Modify copied `mk_descriptors_from_xyz.sh` (or .pbs) appropriately.
 
    ⑴ In lines 7 and 8, set the QCSCRATCH directory, an environment variable of Q-Chem, to suit the user environment.
 
    ⑵ In line 16, set the folder directory containing the QCScripts in 1.
 
    ⑶ If you use PBS, make the same modifications as above for `mk_descriptors_from_xyz.pbs`, but also modify the #PBS part at the top to suit your environment.
-6. Run `mk_descriptors_from_xyz.sh`(or .pbs) to perform the calculation.
+7. Run `mk_descriptors_from_xyz.sh`(or .pbs) to perform the calculation.
 ```tcsh
 tcsh ./mk_descriptors_from_xyz.sh
 ```
@@ -80,5 +90,5 @@ or for pbs usage,
 ```tcsh
 qsub mk_descriptors_from_xyz.pbs
 ```
-7. After the calculation is complete, the results are saved in descriptor.csv.
+8. After the calculation is complete, the results are saved in descriptor.csv.
 

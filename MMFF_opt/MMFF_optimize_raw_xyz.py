@@ -4,9 +4,11 @@ from rdkit.Chem import AllChem
 import os
 import glob
 
+################################User Settings#################################
 raw_path = "./raw_xyz"
-MMFF_path = "./MMFF_PC_xyz"
+MMFF_path = "./MMFF_xyz"
 MAXITER = 2000
+##############################################################################
 
 def mol_to_xyz(mol, filename):
     with open(filename, 'w') as f:

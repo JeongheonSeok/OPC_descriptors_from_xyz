@@ -61,7 +61,7 @@ The Q-Chem calculation process to obtain these is as follows.
 
    B3LYP, 3-21G, PCM(acetonitrille). for optimized structure of neutral molecule.
 
-If you want to modify the computation conditions, you can modify opt_format.in and rst_format.in appropriately.
+If you want to modify the computation conditions, you can modify `opt_format.in` and `rst_format.in` appropriately.
 ### 2-2. Usage
 First, you need to place the scripts and .xyz files for calculation in the appropriate location.
 Also before the usage, some of variables in the code must be appropriately modified to suit the user's environment.

@@ -29,21 +29,21 @@ python ./MMFF_optimize_raw_xyz.py
 Code that automates the process of calculating the quantum chemical properties of an OPC from the .xyz files and saving them to csv file.
 ### 2-1. Calculation Description
 The following properties are calculated and saved in the descriptors.csv file generated through this calculation:
-1. r_PC: Molecular radius of OPC molecule. Optained from vdW surface area of molecule. $(r\sim \sqrt{\frac{area}{4\pi }})$
+1. r_PC: Molecular radius of OPC molecule. Optained from vdW surface area of molecule. $(r\sim \sqrt{\frac{area}{4\pi }})$. in Å
 2. Mw: Molecular weight of OPC molecule. in g/mol.
-3. E_red: 
+3. E_red: reduction energy. Energy difference between neutral molecule and anion. in eV
 4. T1: T1 state energy of neutral OPC molecule. in eV
 5. S1: S1 state energy of neutral OPC molecule. in eV
 6. S1-T1: Energy difference between S1 state and T1 state of OPC molecule. in eV
 7. lambda_int: Internal reorganization energy(of OPC)
-8. OS: Oscillation Strength (from TDDFT result)
-9. D_T1: 
-10. D_S1: 
+8. OS: Oscillator Strength (from TDDFT result)
+9. D_T1: The distance between the hole-electron center of the T1 state. $(|<r_e - r_h>|)$. in Å
+10. D_S1: The distance between the hole-electron center of the S1 state. in Å
 11. deltaD_T1: 
 12. deltaD_S1: 
 13. deltaD_(T1-S1): 
 
-The above results are obtained by properly processing Q-Chem out files. If you want to calculate other properties or modify the result output, you can modify mk_rst_in.py.
+The above results are obtained by properly processing Q-Chem out files. If you want to calculate other properties or modify the result output, you can modify `read_rst_in.py`.
 
 The Q-Chem calculation process to obtain these is as follows.
 

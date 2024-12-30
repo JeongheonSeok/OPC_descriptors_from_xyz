@@ -22,18 +22,6 @@ def mol_to_xyz(mol, filename):
 xyz_files = glob.glob(os.path.join(raw_path, '*.xyz'))
 
 for xyz_file in xyz_files:
-    if 'W2' in xyz_file:
-        os.remove(xyz_file)
-        print(xyz_file, ": NO2 - passed")
-        continue
-    if ('Br' in xyz_file) or ('W10' in xyz_file):
-        os.remove(xyz_file)
-        print(xyz_file, ": Br - passed")
-        continue
-    if 'D10' in xyz_file:
-        os.remove(xyz_file)
-        print(xyz_file, ": D10 - passed")
-        continue
     print(xyz_file)
     raw_mol = Chem.MolFromXYZFile(xyz_file)
     mol = Chem.Mol(raw_mol)

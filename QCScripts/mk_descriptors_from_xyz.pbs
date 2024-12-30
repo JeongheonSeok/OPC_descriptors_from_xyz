@@ -1,3 +1,5 @@
+#!/bin/tcsh
+
 #PBS -N mk_dsc_
 #PBS -q normal
 #PBS -l nodes=1:ppn=40:skl
@@ -5,7 +7,6 @@
 #PBS -o run_output
 #PBS -e run_error
 
-#!/bin/tcsh
 set NPROC = `cat $PBS_NODEFILE | wc -l`
 
 cd $PBS_O_WORKDIR

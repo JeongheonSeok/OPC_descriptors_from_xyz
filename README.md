@@ -28,6 +28,7 @@ python ./MMFF_optimize_raw_xyz.py
 ## 2. Q-Chem Scripts
 Code that automates the process of calculating the quantum chemical properties of an OPC from the .xyz files and saving them to csv file.
 ### 2-1. Calculation Description
+#### 2-1-1. Descriptors
 The following properties are calculated and saved in the descriptors.csv file generated through this calculation:
 1. r_PC: Molecular radius of OPC molecule. Optained from vdW surface area of molecule. $(r\sim \sqrt{\frac{area}{4\pi }})$. in Å
 2. Mw: Molecular weight of OPC molecule. in g/mol.
@@ -45,8 +46,13 @@ The following properties are calculated and saved in the descriptors.csv file ge
 
 The above results are obtained by properly processing Q-Chem out files. If you want to calculate other properties or modify the result output, you can modify `read_rst_in.py`.
 
+#### 2-1-2. Q-Chem computation
 The Q-Chem calculation process to obtain these is as follows.
-
+1. Optimize neutral molecule structure and anion structure from MMFF optimized structure(input xyz file).
+   B3LYP, 6-31G, vacuum
+2. Single point energy calculation
+   B3LYP, 6-31+G(d,p), PCM(acetonitrile)
+3. 
 ### 2-2. Usage
 First, you need to place the scripts and .xyz files for calculation in the appropriate location.
 Also before the usage, some of variables in the code must be appropriately modified to suit the user's environment.

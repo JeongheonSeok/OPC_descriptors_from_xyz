@@ -39,8 +39,11 @@ Also before the usage, some of variables in the code must be appropriately modif
 3. Create three folders in that directory. Name them "xyz", "opt", and "rst".
 4. Put the xyz files to be calculated into the xyz folder.
 5. Modify mk_descriptors_from_xyz.sh (or .pbs) appropriately.
+
    ⑴ In lines 7 and 8, set the QCSCRATCH directory, an environment variable of Q-Chem, to suit the user environment.
+
    ⑵ In line 16, set the folder directory containing the QCScripts in 1.
+
    ⑶ If you use PBS, make the same modifications as above for mk_descriptors_from_xyz.pbs, but also modify the #PBS part at the top to suit your environment.
 6. Run mk_descriptors_from_xyz.sh(or .pbs) to perform the calculation.
 ```tcsh

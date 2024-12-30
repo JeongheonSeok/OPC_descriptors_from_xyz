@@ -1,0 +1,195 @@
+$comment
+   3-21G a_at_a SP
+$end
+
+$molecule
+-1 2
+ani_xyz
+$end
+
+$rem
+   JOB_TYPE  =  SP
+   BASIS  =  3-21G
+   METHOD  =  B3LYP
+   SOLVENT_METHOD  =  PCM
+   MEM_TOTAL  =  192000
+   MEM_STATIC  =  500
+   SCF_CONVERGENCE  =  8
+$end
+
+$pcm
+   vdwScale  1.1
+   RADII  UFF
+   THEORY  CPCM
+$end
+
+$solvent
+   DIELECTRIC  35.9000
+$end
+
+
+@@@
+
+$comment
+   3-21G a_at_n SP
+$end
+
+$molecule
+-1 2
+neu_xyz
+$end
+
+$rem
+   JOB_TYPE  =  SP
+   BASIS  =  3-21G
+   METHOD  =  B3LYP
+   SOLVENT_METHOD  =  PCM
+   MEM_TOTAL  =  192000
+   MEM_STATIC  =  500
+   SCF_CONVERGENCE  =  8
+$end
+
+$pcm
+   vdwScale  1.1
+   RADII  UFF
+   THEORY  CPCM
+$end
+
+$solvent
+   DIELECTRIC  35.9000
+$end
+
+
+@@@
+
+$comment
+   3-21G n_at_a SP
+$end
+
+$molecule
+0 1
+ani_xyz
+$end
+
+$rem
+   JOB_TYPE  =  SP
+   BASIS  =  3-21G
+   METHOD  =  B3LYP
+   SOLVENT_METHOD  =  PCM
+   MEM_TOTAL  =  192000
+   MEM_STATIC  =  500
+   SCF_CONVERGENCE  =  8
+$end
+
+$pcm
+   vdwScale  1.1
+   RADII  UFF
+   THEORY  CPCM
+$end
+
+$solvent
+   DIELECTRIC  35.9000
+$end
+
+
+@@@
+
+$comment
+   6-31+G(d,p) n_at_n SP
+$end
+
+$molecule
+0 1
+neu_xyz
+$end
+
+$rem
+   JOB_TYPE  =  SP
+   BASIS  =  6-31+G(d,p)
+   METHOD  =  B3LYP
+   SOLVENT_METHOD  =  PCM
+   MEM_TOTAL  =  192000
+   MEM_STATIC  =  500
+   SCF_CONVERGENCE  =  6
+$end
+
+$pcm
+   vdwScale  1.1
+   RADII  UFF
+   THEORY  CPCM
+$end
+
+$solvent
+   DIELECTRIC  35.9000
+$end
+
+
+@@@
+
+$comment
+   6-31+G(d,p) a_at_a SP
+$end
+
+$molecule
+-1 2
+ani_xyz
+$end
+
+$rem
+   JOB_TYPE  =  SP
+   BASIS  =  6-31+G(d,p)
+   METHOD  =  B3LYP
+   SOLVENT_METHOD  =  PCM
+   MEM_TOTAL  =  192000
+   MEM_STATIC  =  500
+   SCF_CONVERGENCE  =  6
+$end
+
+$pcm
+   vdwScale  1.1
+   RADII  UFF
+   THEORY  CPCM
+$end
+
+$solvent
+   DIELECTRIC  35.9000
+$end
+
+
+@@@
+
+$comment
+   TDDFT
+$end
+
+$molecule
+0 1
+neu_xyz
+$end
+
+$rem
+    JOBTYPE         SP
+    METHOD          B3LYP
+    BASIS           3-21G
+    SOLVENT_METHOD  PCM
+    cis_n_roots     1
+    cis_singlets    True
+    cis_triplets    True
+    max_cis_cycles  50
+    RPA             0
+    max_scf_cycles  1000
+    MEM_TOTAL       192000
+    MEM_STATIC      500
+    STATE_ANALYSIS  TRUE
+$end
+
+$pcm
+    THEORY          CPCM
+    RADII           UFF
+    vdwScale        1.1
+$end
+
+$solvent
+    Dielectric      35.9
+    OPTICALDIELECTRIC  1.81
+$end

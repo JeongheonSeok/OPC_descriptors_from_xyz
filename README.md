@@ -37,11 +37,11 @@ The following properties are calculated and saved in the descriptors.csv file ge
 6. S1-T1: Energy difference between S1 state and T1 state of OPC molecule. in eV
 7. lambda_int: Internal reorganization energy(of OPC)
 8. OS: Oscillator Strength (from TDDFT result)
-9. D_T1: The distance between the hole-electron center of the T1 state. $(|\left< r_e - r_h \right>|)$. in Å
-10. D_S1: The distance between the hole-electron center of the S1 state. in Å
-11. deltaD_T1: 
-12. deltaD_S1: 
-13. deltaD_(T1-S1): 
+9. D_T1: Distance between the hole-electron center of the T1 state. $\left| \left< r_e - r_h \right> \right|$. in Å
+10. D_S1: Distance between the hole-electron center of the S1 state. in Å
+11. deltaD_T1: Dipole moment difference between T1 state and neutral ground state. (Note that this is different from the transition dipole moment)
+12. deltaD_S1: Dipole moment difference between S1 state and neutral gorund state.
+13. deltaD_(T1-S1): Dipole moment difference between T1 state and S1 state.
 
 The above results are obtained by properly processing Q-Chem out files. If you want to calculate other properties or modify the result output, you can modify `read_rst_in.py`.
 

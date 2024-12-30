@@ -1,11 +1,12 @@
 from rdkit import Chem
 from rdkit.Chem import rdDetermineBonds
 from rdkit.Chem import AllChem
-
 import os
 import glob
 
-# from tqdm import tqdm
+raw_path = "./raw_xyz"
+MMFF_path = "./MMFF_PC_xyz"
+MAXITER = 2000
 
 def mol_to_xyz(mol, filename):
     with open(filename, 'w') as f:
@@ -15,10 +16,6 @@ def mol_to_xyz(mol, filename):
         for atom in mol.GetAtoms():
             pos = mol.GetConformer().GetAtomPosition(atom.GetIdx())
             f.write(f"{atom.GetSymbol()} {pos.x} {pos.y} {pos.z}\n")
-
-raw_path = "./T1_xyzs"
-MMFF_path = "./MMFF_PC_xyz"
-MAXITER = 2000
 
 xyz_files = glob.glob(os.path.join(raw_path, '*.xyz'))
 

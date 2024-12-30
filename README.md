@@ -52,17 +52,17 @@ First, you need to place the scripts and .xyz files for calculation in the appro
 Also before the usage, some of variables in the code must be appropriately modified to suit the user's environment.
 
 1. Place the QCScripts files in the appropriate directory. (This directory must be accessible for future calculations)
-2. Copy the file mk_descriptors_from_xyz.sh (or mk_descriptors_from_xyz.pbs if using the Portable Batch System) to the directory where you will perform the calculation.
-3. Create three folders in that directory. Name them "xyz", "opt", and "rst".
-4. Put the xyz files to be calculated into the xyz folder. (These xyz files have to contain MMFF optimized structure)
-5. Modify mk_descriptors_from_xyz.sh (or .pbs) appropriately.
+2. Copy the file `mk_descriptors_from_xyz.sh` (or `mk_descriptors_from_xyz.pbs` if using the Portable Batch System) to the directory where you will perform the calculation.
+3. Create three folders in that directory. Name them `xyz`, `opt`, and `rst`.
+4. Put the xyz files to be calculated into the `xyz` folder. (These xyz files have to contain MMFF optimized structure)
+5. Modify `mk_descriptors_from_xyz.sh` (or .pbs) appropriately.
 
    ⑴ In lines 7 and 8, set the QCSCRATCH directory, an environment variable of Q-Chem, to suit the user environment.
 
    ⑵ In line 16, set the folder directory containing the QCScripts in 1.
 
-   ⑶ If you use PBS, make the same modifications as above for mk_descriptors_from_xyz.pbs, but also modify the #PBS part at the top to suit your environment.
-6. Run mk_descriptors_from_xyz.sh(or .pbs) to perform the calculation.
+   ⑶ If you use PBS, make the same modifications as above for `mk_descriptors_from_xyz.pbs`, but also modify the #PBS part at the top to suit your environment.
+6. Run `mk_descriptors_from_xyz.sh`(or .pbs) to perform the calculation.
 ```tcsh
 tcsh ./mk_descriptors_from_xyz.sh
 ```

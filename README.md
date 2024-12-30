@@ -18,9 +18,11 @@ If you have enough time, you can try dividing the structure for starting the cal
 Code for generating suitable initial structures before quantum chemistry calculations. Optimize the structure of .xyz files using MMFF.
 
 1. Create a raw_xyz folder and a MMFF_xyz folder under the location where MMFF_optimize_raw_xyz.py is located.
-2. run MMFF_optimize_raw_xyz.py
+2. Place .xyz files containing molecular structures to be optimized with MMFF in the raw_xyz folder. (Each xyz file contains only one molecule.)
+3. run MMFF_optimize_raw_xyz.py
 ```bash
 python ./MMFF_optimize_raw_xyz.py
 ```
+4. .xyz files containing MMFF optimized structures are stored in MMFF_xyz folders.
 
 ## 2. Q-Chem computation

@@ -17,31 +17,32 @@ If you have enough time, you can try dividing the structure for starting the cal
 ## 1. MMFF optimize
 Code for generating suitable initial structures before quantum chemistry calculations. Optimize the structure of .xyz files using MMFF.
 
-1. Create a raw_xyz folder and a MMFF_xyz folder under the location where MMFF_optimize_raw_xyz.py is located.
-2. Place .xyz files containing molecular structures to be optimized with MMFF in the raw_xyz folder. (Each xyz file contains only one molecule.)
-3. run MMFF_optimize_raw_xyz.py
+1. Create a `raw_xyz` folder and a `MMFF_xyz` folder under the location where `MMFF_optimize_raw_xyz.py` is located.
+2. Place .xyz files containing molecular structures to be optimized with MMFF in the `raw_xyz` folder. (Each xyz file contains only one molecule.)
+3. run `MMFF_optimize_raw_xyz.py`
 ```tcsh
 python ./MMFF_optimize_raw_xyz.py
 ```
-4. .xyz files containing MMFF optimized structures are stored in MMFF_xyz folders.
+4. .xyz files containing MMFF optimized structures are stored in `MMFF_xyz` folders.
 
 ## 2. Q-Chem Scripts
 Code that automates the process of calculating the quantum chemical properties of an OPC from the .xyz files and saving them to csv file.
 ### 2-1. Calculation Description
 The following properties are calculated and saved in the descriptors.csv file generated through this calculation:
-1. r_PC
-2. Mw
-3. E_red
-4. T1
-5. S1
-6. S1-T1
-7. lambda_int
-8. OS
-9. D_T1
-10. D_S1
-11. deltaD_T1
-12. deltaD_S1
-13. deltaD_(T1-S1)
+1. r_PC: Molecular radius of OPC molecule. Optained from vdW surface area of molecule. ()
+2. Mw: Molecular weight of OPC molecule. in g/mol.
+3. E_red: 
+4. T1: T1 state energy of neutral OPC molecule. in eV
+5. S1: S1 state energy of neutral OPC molecule. in eV
+6. S1-T1: Energy difference between S1 state and T1 state of OPC molecule. in eV
+7. lambda_int: Internal reorganization energy(of OPC)
+8. OS: Oscillation Strength (from TDDFT result)
+9. D_T1: 
+10. D_S1: 
+11. deltaD_T1: 
+12. deltaD_S1: 
+13. deltaD_(T1-S1): 
+
 The above results are obtained by properly processing Q-Chem out files. If you want to calculate other properties or modify the result output, you can modify mk_rst_in.py.
 
 The Q-Chem calculation process to obtain these is as follows.
